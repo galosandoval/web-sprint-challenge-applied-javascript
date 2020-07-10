@@ -22,3 +22,40 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function carouselMaker () {
+  const carousel = document.createElement('div')
+  carousel.classList.add('carousel')
+
+  const leftbutton = document.createElement('div')
+  leftbutton.classList.add('left-button')
+
+  const mountainsImg = document.createElement('img')
+  mountainsImg.src = '/assets/carousel/mountains.jpeg'
+
+  const computerImg = document.createElement('img')
+  computerImg.src = '/assets/carousel/computer.jpeg'
+
+  const treesImg = document.createElement('img')
+  treesImg.src = '/assets/carousel/trees.jpeg'
+
+  const turntableImg = document.createElement('img')
+  turntableImg.src = '/assets/carousel/turntable.jpeg'
+
+  const rightbutton = document.createElement('div')
+  rightbutton.classList.add('right-button')
+  rightbutton.textContent = '>'
+
+  carousel.appendChild(leftbutton)
+  carousel.appendChild(mountainsImg)
+  carousel.appendChild(computerImg)
+  carousel.appendChild(treesImg)
+  carousel.appendChild(turntableImg)
+  carousel.appendChild(rightbutton)
+
+  return carousel
+}
+
+const carouselContainer = document.querySelector('carousel-container')
+// carouselContainer.appendChild(carouselMaker())
+// console.log(carouselMaker())

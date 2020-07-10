@@ -105,3 +105,15 @@ axios.get(articleCardData)
     console.log('oops', err)
   })
 
+// axios.get(articleCardData)
+//   .then((res) => {
+//     for(let i = 0; i < res.data.articles.length; i++) {
+//       res.data.articles[i].forEach(element => {
+//         cardscontainer.appendChild(cardMaker(element))
+//       })
+//     }
+//     return res.data.articles
+//   })
+//   .catch((err) => {
+//     console.log('oops', err)
+//   })
