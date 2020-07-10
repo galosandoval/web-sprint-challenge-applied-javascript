@@ -108,7 +108,7 @@ const cardscontainer = document.querySelector('.cards-container')
 axios.get(articleCardData)
   .then((res) => {
     for(let i in res.data.articles){
-      res.data.articles.technology.forEach(element => {
+      res.data.articles[i].forEach(element => {
        cardscontainer.appendChild(cardMaker(element))            
     });
   }  
