@@ -20,3 +20,88 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+
+function cardMaker (articleObject) {
+  const card = document.createElement('div')
+  card.classList.add('card')
+
+  const headline = document.createElement('div')
+  headline.classList.add('headline')
+  headline.textContent = articleObject.headline
+  
+  const author = document.createElement('div')
+  author.classList.add('author')
+
+  const imgContainer = document.createElement('div')
+  imgContainer.classList.add('img-container')
+
+  const authorsImg = document.createElement('img')
+  authorsImg.src = articleObject.authorPhoto
+
+  const byAuthorsName = document.createElement('span')
+  byAuthorsName.textContent = `By ${articleObject.authorName}`
+
+  card.appendChild(headline)
+  card.appendChild(author)
+  author.appendChild(imgContainer)
+  imgContainer.appendChild(authorsImg)
+  author.appendChild(byAuthorsName)
+
+  card.addEventListener('click', () => {
+    console.log(articleObject.headline)
+  })
+
+  return card
+}
+
+// console.log(cardMaker())
+
+const articleCardData = 'https://lambda-times-backend.herokuapp.com/articles'
+
+const cardscontainer = document.querySelector('.cards-container')
+axios.get(articleCardData)
+  .then((res) => {
+    res.data.articles.bootstrap.forEach(element => {
+      cardscontainer.appendChild(cardMaker(element))
+    });
+  })
+  .catch((err) => {
+    console.log('oops', err)
+  })
+axios.get(articleCardData)
+  .then((res) => {
+    res.data.articles.javascript.forEach(element => {
+      cardscontainer.appendChild(cardMaker(element))
+    });
+  })
+  .catch((err) => {
+    console.log('oops', err)
+  })
+axios.get(articleCardData)
+  .then((res) => {
+    res.data.articles.jquery.forEach(element => {
+      cardscontainer.appendChild(cardMaker(element))
+    });
+  })
+  .catch((err) => {
+    console.log('oops', err)
+  })
+axios.get(articleCardData)
+  .then((res) => {
+    res.data.articles.node.forEach(element => {
+      cardscontainer.appendChild(cardMaker(element))
+    });
+  })
+  .catch((err) => {
+    console.log('oops', err)
+  })
+axios.get(articleCardData)
+  .then((res) => {
+    res.data.articles.technology.forEach(element => {
+      cardscontainer.appendChild(cardMaker(element))
+    });
+  })
+  .catch((err) => {
+    console.log('oops', err)
+  })
+

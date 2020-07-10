@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+the DOM is a representation of the webpage and can be modified with JS
+
 2. What is an event?
+
+Something that happens to an element when the user does a particular thing on the page
 
 3. What is an event listener?
 
+The EventListener represents an object that can handle an event dispatched by an EventTarget object.
+
 4. Why would we convert a NodeList into an Array?
 
+so that we can use its data
+
 5. What is a component?
+
+functions that accept random inputs and return elements that describe what appears on the screen
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
