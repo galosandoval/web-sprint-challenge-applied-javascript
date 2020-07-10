@@ -59,61 +59,60 @@ function cardMaker (articleObject) {
 const articleCardData = 'https://lambda-times-backend.herokuapp.com/articles'
 
 const cardscontainer = document.querySelector('.cards-container')
-axios.get(articleCardData)
-  .then((res) => {
-    res.data.articles.bootstrap.forEach(element => {
-      cardscontainer.appendChild(cardMaker(element))
-    });
-  })
-  .catch((err) => {
-    console.log('oops', err)
-  })
-axios.get(articleCardData)
-  .then((res) => {
-    res.data.articles.javascript.forEach(element => {
-      cardscontainer.appendChild(cardMaker(element))
-    });
-  })
-  .catch((err) => {
-    console.log('oops', err)
-  })
-axios.get(articleCardData)
-  .then((res) => {
-    res.data.articles.jquery.forEach(element => {
-      cardscontainer.appendChild(cardMaker(element))
-    });
-  })
-  .catch((err) => {
-    console.log('oops', err)
-  })
-axios.get(articleCardData)
-  .then((res) => {
-    res.data.articles.node.forEach(element => {
-      cardscontainer.appendChild(cardMaker(element))
-    });
-  })
-  .catch((err) => {
-    console.log('oops', err)
-  })
-axios.get(articleCardData)
-  .then((res) => {
-    res.data.articles.technology.forEach(element => {
-      cardscontainer.appendChild(cardMaker(element))
-    });
-  })
-  .catch((err) => {
-    console.log('oops', err)
-  })
-
 // axios.get(articleCardData)
 //   .then((res) => {
-//     for(let i = 0; i < res.data.articles.length; i++) {
-//       res.data.articles[i].forEach(element => {
-//         cardscontainer.appendChild(cardMaker(element))
-//       })
-//     }
-//     return res.data.articles
+//     res.data.articles.bootstrap.forEach(element => {
+//       cardscontainer.appendChild(cardMaker(element))
+//     });
 //   })
 //   .catch((err) => {
 //     console.log('oops', err)
 //   })
+// axios.get(articleCardData)
+//   .then((res) => {
+//     res.data.articles.javascript.forEach(element => {
+//       cardscontainer.appendChild(cardMaker(element))
+//     });
+//   })
+//   .catch((err) => {
+//     console.log('oops', err)
+//   })
+// axios.get(articleCardData)
+//   .then((res) => {
+//     res.data.articles.jquery.forEach(element => {
+//       cardscontainer.appendChild(cardMaker(element))
+//     });
+//   })
+//   .catch((err) => {
+//     console.log('oops', err)
+//   })
+// axios.get(articleCardData)
+//   .then((res) => {
+//     res.data.articles.node.forEach(element => {
+//       cardscontainer.appendChild(cardMaker(element))
+//     });
+//   })
+//   .catch((err) => {
+//     console.log('oops', err)
+//   })
+// axios.get(articleCardData)
+//   .then((res) => {
+//     res.data.articles.technology.forEach(element => {
+//       cardscontainer.appendChild(cardMaker(element))
+//     });
+//   })
+//   .catch((err) => {
+//     console.log('oops', err)
+//   })
+
+axios.get(articleCardData)
+  .then((res) => {
+    for(let i in res.data.articles){
+      res.data.articles.technology.forEach(element => {
+       cardscontainer.appendChild(cardMaker(element))            
+    });
+  }  
+  })
+  .catch((err) => {
+    console.log('oops', err)
+  })
